@@ -19,9 +19,10 @@ subprocess.call("sudo iwconfig " + iface + " mode monitor", shell=True)
 new_mac = input("Do you wish to spoof a MAC address? Y/N ")
 if new_mac in yes:
     print("sudo macchanger " + iface + " -m 00:11:22:33:44:55")
-    subprocess.call("sudo macchanger " + iface + " -m 00:11:22:33:44:55", shell=True)
+    subprocess.call("sudo macchanger " + iface + " -m 00:11:22:33:44:55",
+                    shell=True)
 
-print("sudo ifconfig " +  iface + " up")
+print("sudo ifconfig " + iface + " up")
 subprocess.call("sudo ifconfig " + iface + " up", shell=True)
 
 run_snif = input("Do you wish to run an initial network scan? Y/N ")
@@ -33,4 +34,3 @@ elif run_snif in no:
     exit()
 else:
     iface = input("Please select either Y or N... ")
-  
